@@ -8,8 +8,8 @@ export default function SiteHeader() {
           Realty <span>Unplugged</span>
         </Link>
         <nav className="ru-nav">
-          <Link href="/privacy-policy">Privacy Policy</Link>
-          <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+          <Link href="/privacy-policy">Privacy</Link>
+          <Link href="/terms-and-conditions">Terms</Link>
           <Link href="/disclaimer">Disclaimer</Link>
         </nav>
       </div>

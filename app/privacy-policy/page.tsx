@@ -7,15 +7,11 @@ export const metadata: Metadata = {
     "How Realty Unplugged collects, uses, shares and protects your personal information.",
 };
 
-const PH = ({ children }: { children: string }) => (
-  <span className="ru-placeholder">{children}</span>
-);
-
 export default function PrivacyPolicy() {
   return (
     <LegalLayout
       title="Privacy Policy"
-      effectiveDate="[EFFECTIVE DATE]"
+      effectiveDate="18 June 2026"
       intro="Realty Unplugged (“we”, “us” or “our”) respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains what we collect when you use our website and services, why we collect it, and the choices you have."
     >
       <h2>1. Scope of this Policy</h2>
@@ -135,11 +131,12 @@ export default function PrivacyPolicy() {
         <p>
           <strong>Realty Unplugged</strong>
           <br />
-          Email: <PH>[EMAIL]</PH>
+          Email: <a href="mailto:info@realtyunplugged.com">info@realtyunplugged.com</a>
           <br />
-          Phone: <PH>[PHONE]</PH>
+          Phone: <a href="tel:+919818027516">+91 9818027516</a>
           <br />
-          Address: <PH>[ADDRESS]</PH>
+          Address: Shop No. 11, 3rd Floor, Omaxe Celebration Mall, Sohna Road,
+          Gurgaon&ndash;122018
         </p>
       </div>
     </LegalLayout>

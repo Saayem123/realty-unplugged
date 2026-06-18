@@ -7,15 +7,11 @@ export const metadata: Metadata = {
     "Disclaimer covering the limits and intended use of information provided by Realty Unplugged.",
 };
 
-const PH = ({ children }: { children: string }) => (
-  <span className="ru-placeholder">{children}</span>
-);
-
 export default function Disclaimer() {
   return (
     <LegalLayout
       title="Disclaimer"
-      effectiveDate="[EFFECTIVE DATE]"
+      effectiveDate="18 June 2026"
       intro="The information provided by Realty Unplugged on this website is for general informational purposes only. By using our site, you acknowledge and accept the terms of this Disclaimer."
     >
       <h2>1. General Information</h2>
@@ -97,11 +93,12 @@ export default function Disclaimer() {
         <p>
           <strong>Realty Unplugged</strong>
           <br />
-          Email: <PH>[EMAIL]</PH>
+          Email: <a href="mailto:info@realtyunplugged.com">info@realtyunplugged.com</a>
           <br />
-          Phone: <PH>[PHONE]</PH>
+          Phone: <a href="tel:+919818027516">+91 9818027516</a>
           <br />
-          Address: <PH>[ADDRESS]</PH>
+          Address: Shop No. 11, 3rd Floor, Omaxe Celebration Mall, Sohna Road,
+          Gurgaon&ndash;122018
         </p>
       </div>
     </LegalLayout>

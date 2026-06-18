@@ -7,15 +7,11 @@ export const metadata: Metadata = {
     "The terms and conditions governing your use of the Realty Unplugged website and services.",
 };
 
-const PH = ({ children }: { children: string }) => (
-  <span className="ru-placeholder">{children}</span>
-);
-
 export default function TermsAndConditions() {
   return (
     <LegalLayout
       title="Terms & Conditions"
-      effectiveDate="[EFFECTIVE DATE]"
+      effectiveDate="18 June 2026"
       intro="These Terms & Conditions govern your access to and use of the Realty Unplugged website and the services we offer. By using our website, you confirm that you accept these terms and agree to comply with them. If you do not agree, please do not use our site."
     >
       <h2>1. About These Terms</h2>
@@ -110,7 +106,7 @@ export default function TermsAndConditions() {
       <p>
         These terms are governed by and construed in accordance with applicable
         law, and any disputes shall be subject to the exclusive jurisdiction of
-        the competent courts of <PH>[JURISDICTION]</PH>.
+        the competent courts of Gurgaon, Haryana, India.
       </p>
 
       <div className="ru-callout">
@@ -121,11 +117,12 @@ export default function TermsAndConditions() {
         <p>
           <strong>Realty Unplugged</strong>
           <br />
-          Email: <PH>[EMAIL]</PH>
+          Email: <a href="mailto:info@realtyunplugged.com">info@realtyunplugged.com</a>
           <br />
-          Phone: <PH>[PHONE]</PH>
+          Phone: <a href="tel:+919818027516">+91 9818027516</a>
           <br />
-          Address: <PH>[ADDRESS]</PH>
+          Address: Shop No. 11, 3rd Floor, Omaxe Celebration Mall, Sohna Road,
+          Gurgaon&ndash;122018
         </p>
       </div>
     </LegalLayout>
