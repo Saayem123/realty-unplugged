@@ -6,6 +6,7 @@
 import json, time, urllib.request, urllib.parse
 from lib import cfg, env, save, OUT
 C = cfg(); SK = env("SERPER_API_KEY")
+SEO = env("SEODATA_API_KEY", required=False)   # registered tier; anonymous tier works without it
 GL = C["country"].lower()        # ae / in
 CC = C["country"].lower()
 
@@ -44,7 +45,9 @@ for k in C["cpc_keywords"]:
     enc = urllib.parse.quote(k); row = None
     for attempt in range(3):
         try:
-            with urllib.request.urlopen(f"https://app.seodata.dev/v1/keyword?q={enc}&country={CC}", timeout=25) as r:
+            sreq = urllib.request.Request(f"https://app.seodata.dev/v1/keyword?q={enc}&country={CC}",
+                headers={"Authorization": f"Bearer {SEO}"} if SEO else {})
+            with urllib.request.urlopen(sreq, timeout=25) as r:
                 d = json.loads(r.read())
             if "volume" in d:
                 row = d; print(f"{d.get('keyword','?')[:34]:34}{d.get('volume',0):>9}{str(d.get('cpc',0)):>7}{str(d.get('competition',0)):>6}"); break
