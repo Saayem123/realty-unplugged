@@ -11,7 +11,7 @@ as a bundle.
 - `examples/` — a worked Creek Bay / Emaar build
 - Docs: `README.md`, `CLAUDE.md`, `METHODOLOGY.md`, `CONTEXT_Extraction_Stack.md`
 - `requirements.txt`, `config.example.json`, `.env.template`, `.gitignore`
-- **`.env`** — filled with your Apify, YouTube, and Serper keys (seodata PENDING — see note in file)
+- **`.env`** — filled with your Apify, YouTube, Serper, **and seodata** keys (all four configured)
 - **`config.json`** — currently the example (Creek Bay / Emaar); edit per client before running
 
 > `.gitignore` keeps `.env`, `config.json`, and `out/` OUT of git — secrets are never committed.
@@ -27,10 +27,11 @@ as a bundle.
    ```
 5. Commit the **source** (the `.gitignore` will exclude `.env`/`config.json`/`out/`), then push.
 
-## Two things that still need you
-- **seodata.dev**: register at https://app.seodata.dev → `POST /v1/register {"email":"mohdsaayam123@gmail.com"}`
-  → enter the 6-digit code mailed to you. Add the resulting session/key per the note in `.env`.
-  (It could not be done automatically: email code + the data-API network policy.)
+## Still needs you
+- **seodata.dev**: ✅ DONE — registered for `mohdsaayam123@gmail.com`; key is in `.env` as
+  `SEODATA_API_KEY` and sent by `02_press_cpc.py` as `Authorization: Bearer <key>`. If live calls
+  return `401`, the registered tier may expect `X-API-KEY` or `?key=` instead — check `seodata.dev/llms.txt`
+  and adjust the header in `02_press_cpc.py`. (Limits: 50/day, 500/mo.)
 - **Network policy**: to actually *run* the scrapers, the new environment must allow outbound HTTPS to
   `api.apify.com`, `www.googleapis.com`, `google.serper.dev`, and `app.seodata.dev`. Otherwise the kit
   is installed and configured but the live scrape will 403.
